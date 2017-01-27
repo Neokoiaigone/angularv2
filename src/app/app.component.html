@@ -1,4 +1,5 @@
 <app-header></app-header>
+<app-todos></app-todos>
 <h1>
   {{title}}
 </h1>
@@ -7,12 +8,17 @@
 <ul>
   <!-- *ngFor permet de générer autant d'élément HTML que le tableau en contient -->
   <li *ngFor="let jeu of jeux">
-    <span (click)="editTodo(todo)">
+    <span (click)="editJeu(jeu)">
     <h1>{{jeu.name}}</h1>
      <p>{{jeu.summary}}</p>
       {{jeu.genres}}
+      {{jeu.text}}
+      <li *ngFor="let screenshot of jeu.screenshots">
+        <img src="{{screenshot.url}}"/>
+        </li>
     <button (click)="deleteTodo(todo)">x</button>
     </span>
+  
   </li>
-</ul>   
+</ul> 
 <app-footer></app-footer>
