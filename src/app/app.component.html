@@ -1,24 +1,28 @@
 <app-header></app-header>
-<app-todos></app-todos>
-<h1>
+<!-- <app-todos></app-todos> -->
+<div class="container">
+  <div class="row">
+<h1 class="title-detail">
   {{title}}
 </h1>
-
- <h3>jeux </h3>
+<p class="text-detail">Voici la liste des jeux que contient notre site.</p>
 <ul>
   <!-- *ngFor permet de générer autant d'élément HTML que le tableau en contient -->
   <li *ngFor="let jeu of jeux">
     <span (click)="editJeu(jeu)">
-    <h1>{{jeu.name}}</h1>
-     <p>{{jeu.summary}}</p>
+    <h1 class="title-detail">{{jeu.name}}</h1>
+     <p class="text-detail">{{jeu.summary}}</p>
       {{jeu.genres}}
       {{jeu.text}}
       <li *ngFor="let screenshot of jeu.screenshots">
-        <img src="{{screenshot.url}}"/>
+        <img class="col-md-6" style="padding: 5px;" src="{{screenshot.url}}"/>
         </li>
-    <button (click)="deleteTodo(todo)">x</button>
+    <!-- <button (click)="deleteTodo(todo)">x</button> */ -->
     </span>
-  
   </li>
 </ul> 
+</div>
+</div>
 <app-footer></app-footer>
+
+  

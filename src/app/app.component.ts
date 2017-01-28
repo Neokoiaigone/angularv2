@@ -8,7 +8,7 @@ import {GamesService} from "./games.service";
 })
 
 export class AppComponent implements OnInit{
-  title = 'app works!';
+  title = 'Liste des jeux';
   jeux;
   
   name:string;
