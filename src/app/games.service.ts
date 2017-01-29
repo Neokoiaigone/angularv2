@@ -14,10 +14,16 @@ interface Jeu{
 
 @Injectable()
 export class GamesService {
+  jeux=JEUX;
+  selectedJeu: Jeu;
+
   constructor() { }
   getJeux()
   {
     return JEUX;
+  }
+  onSelect(JEUX: Jeu):void{
+    this.selectedJeu = JEUX;
   }
 }
 
