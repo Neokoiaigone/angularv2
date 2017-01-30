@@ -9,7 +9,7 @@
 <p class="text-detail">Voici la liste des jeux que contient notre site.</p>
 <ul>
   <!-- *ngFor permet de générer autant d'élément HTML que le tableau en contient -->
- <div *ngFor="let jeu of jeux" 
+ <li *ngFor="let jeu of jeux" 
   [class.selected]="jeu === selectedJeu" 
   (click)="onSelect(jeu)">
     <div class="text-center"><span class="badge">genres: {{jeu.genres}} </span> name: {{jeu.name}}</div>
@@ -17,15 +17,11 @@
     description: {{jeu.summary}}
     </div>
     <ul>
-      <div class="container">
-  <div class="row">
-        <div *ngFor="let screenshot of jeu.screenshots" class="col-lg-3">
-        <div class=""><span class=""><img class="img-responsive"src="{{screenshot.url}}"/></span></div>      
+        <div *ngFor="let screenshot of jeu.screenshots">
+        <div class=""><span class="badge"><img class="col-md-4"src="{{screenshot.url}}"/></span></div>      
         </div> 
-      </div>
-      </div>
     </ul>
-  </div>
+  </li>
 </ul> 
 <div *ngIf="selectedJeu">
 <h2>{{selectedJeu.name}} details!</h2>
